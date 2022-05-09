@@ -22,28 +22,11 @@
     height: 50px;
 }
 
-.nav a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #232933;
-    width: 80px;
-    height: 35px;
-    border-bottom: 1px solid #FFFFFF;
-}
-
-.nav a:hover {
-    border-bottom: 1px solid #232933;
-}
-
 .header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #FFFFFF;
-    background-color: #232933;
 }
 
 .header_a {
