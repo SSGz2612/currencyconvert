@@ -10,7 +10,6 @@ function App() {
   const [ coin1, setCoin1 ] = useState('EUR');
   const [ coin2, setCoin2 ] = useState('USD');
 
-  /*Ukranian*/
   const [ ukr, setUkr ] = useState();
 
   const [ totalCoins, setTotalCoins ] = useState([]);
@@ -23,15 +22,8 @@ function App() {
     })}, []
   );
 
-  useEffect( () => {
-    if( !totalCoins ) {
-      handleVal1Change( 1 );
-    }
-  }, []);
-
   function fix( n ) { return n.toFixed( 2 )};
-  
-  // for take the API change totalRates to totalCoins
+
   function handleVal1Change( val1 ) {
     setVal2( fix( val1 * totalCoins[ coin2 ] / totalCoins[ coin1 ]));
     setVal1( val1 );
@@ -56,6 +48,8 @@ function App() {
 
       <header className='header'>
         <div className='header_a'>Currency Converter</div>
+        <div className='subTittle'>Over 31 years of currency data. Powered by XS</div>
+
         <div className='header_b'>
           1 EUR
           <div className='header_eu'></div>
@@ -71,24 +65,42 @@ function App() {
         </div>
       </header>
 
-      <section className='section'>
-        <Currency
-          onValChange={ handleVal1Change }
-          onCoinsChange={ handleCoin1Change }
-          val={ val1 } 
-          coins={ coin1 }
-          totalCoins={ Object.keys( totalCoins )}
-          flag={ coin1 }
-        />
-        <Currency
-          onValChange={ handleVal2Change }
-          onCoinsChange={ handleCoin2Change }
-          val={ val2 }
-          coins={ coin2 }
-          totalCoins={ Object.keys( totalCoins )}
-          flag={ coin2 }
-        />
-      </section>
+      <div className='containerSection'>
+        <section className='section'>
+          <Currency
+            onValChange={ handleVal1Change }
+            onCoinsChange={ handleCoin1Change }
+            val={ val1 } 
+            coins={ coin1 }
+            totalCoins={ Object.keys( totalCoins )}
+            flag={ coin1 }
+          />
+          <Currency
+            onValChange={ handleVal2Change }
+            onCoinsChange={ handleCoin2Change }
+            val={ val2 }
+            coins={ coin2 }
+            totalCoins={ Object.keys( totalCoins )}
+            flag={ coin2 }
+          />
+        </section>
+      </div>
+
+      <div className='containerFxData'>
+        <div className='fxData'>
+          <h3>XS data API</h3>
+          <p>Our API can be integrated into your ERP, giving you access to accurate, historical FX data and rates.</p>
+        </div>
+
+        <div className='fxData'>
+        <h3>XS Witfe</h3>
+          <p>We help individuals you send money abroad for less compared to traditional providers.</p>
+        </div>
+      </div>
+
+      <footer>
+      The currency calculator tools use XS Rates™, the touchstone XS rates compiled from leading market data contributors
+      </footer>
     </div>
   )
 }

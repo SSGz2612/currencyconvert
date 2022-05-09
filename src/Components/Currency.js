@@ -17,7 +17,7 @@ function Currency( props ) {
                 onChange={ e => props.onCoinsChange( e.target.value )}
             >{
                 props.totalCoins.map(( e, index ) => (
-                    <option key={ index } value={ e }>{ e }</option>
+                    <option key={ index } value={ e }>{ e } { "" }</option>
                 ))
             }</select>
         </div>

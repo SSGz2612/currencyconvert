@@ -33,8 +33,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
-    padding: 10px 0px;
+    font-size: 35px;
+}
+
+.subTittle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    margin: auto auto 10px auto;
+    width: 40%;
 }
 
 .header_b {
@@ -51,12 +60,21 @@
     padding: 5px 5px 10px 5px;
 }
 
+.containerSection {
+    display: flex;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 470px;
+    height: 230px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+}
+
 .section {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: auto;
     width: 100%;
-    height: 100%;
 }
 
 .header_eu {
@@ -93,4 +111,39 @@
     height: 20px;
     border: 1px solid #FFFFFF;
     border-radius: 10px;
+}
+
+.containerFxData {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 700px;
+    min-height: 230px;
+    height: auto;
+}
+
+.fxData {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 150px;
+    width: 100%;
+    height: 90%;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    margin: auto;
+    max-width: 450px;
+    width: 100%;
+    height: 50px;
 }

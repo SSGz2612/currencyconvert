@@ -1,9 +1,8 @@
 .currency {
     display: flex;
     justify-content: center;
-    background-color: #EEEEEE;
-    padding: 10px;
-    width: 350px;
+    padding: 20px;
+    width: auto;
 }
 
 .input {
@@ -11,6 +10,7 @@
     margin: 5px 5px 0px 5px;
     width: 200px;
     border: 1px solid #DDDDDD;
+    border-radius: 3px;
 }
 
 .country {
