@@ -1,0 +1,49 @@
+.currency {
+    display: flex;
+    justify-content: center;
+    background-color: #EEEEEE;
+    padding: 10px;
+    width: 350px;
+}
+
+.input {
+    padding: 10px;
+    margin: 5px 5px 0px 5px;
+    width: 200px;
+    border: 1px solid #DDDDDD;
+}
+
+.country {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px 0px 5px;
+    width: 50px;
+    height: auto;
+    border-top: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+    border-right: 1px solid #EEEEEE;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.countryfl {
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: 20px;
+    background-color: #DDDDDD;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.select {
+    background-color: #EEEEEE;
+    padding: 10px;
+    margin: 5px 5px 0px 0px;
+    width: 70px;
+    border-top: 1px solid #DDDDDD;
+    border-left: 1px solid #EEEEEE;
+    border-right: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+}
