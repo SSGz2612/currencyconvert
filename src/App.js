@@ -9,8 +9,9 @@ function App() {
 
   const [ coin1, setCoin1 ] = useState('EUR');
   const [ coin2, setCoin2 ] = useState('USD');
+
   /*Ukranian*/
-  const [ ukr, setUkr ] = useState('UAH');
+  const [ ukr, setUkr ] = useState();
 
   const [ totalCoins, setTotalCoins ] = useState([]);
   
@@ -18,6 +19,7 @@ function App() {
     axios.get( 'https://api.apilayer.com/fixer/latest?apikey=iUh3I3pLdboaqjOkr386wDz438E8UxoT').then(
     response => {
       setTotalCoins( response.data.rates );
+      setUkr( response.data.rates.UAH );
     })}, []
   );
 
@@ -25,44 +27,27 @@ function App() {
     if( !totalCoins ) {
       handleVal1Change( 1 );
     }
-  }, [ totalCoins ]);
+  }, []);
 
-  // get the ukranian value
-  useEffect( () => {
-    setUkr( totalCoins.UAH )
-    console.log( totalCoins.UAH );
-  }, [ ukr ]);
-
-  function fix( n ) {
-    return n.toFixed( 2 );
-  }
+  function fix( n ) { return n.toFixed( 2 )};
   
   // for take the API change totalRates to totalCoins
   function handleVal1Change( val1 ) {
-    setVal2( fix( val1 * totalCoins[ coin2 ] / totalCoins[ coin1 ] ));
+    setVal2( fix( val1 * totalCoins[ coin2 ] / totalCoins[ coin1 ]));
     setVal1( val1 );
   }
   function handleVal2Change( val2 ) {
-    setVal1( fix( val2 * totalCoins[ coin1 ] / totalCoins[ coin2 ] ));
+    setVal1( fix( val2 * totalCoins[ coin1 ] / totalCoins[ coin2 ]));
     setVal2( val2 );
   }
 
   function handleCoin1Change( coin1 ) {
-    setVal2( fix( val1 * totalCoins[ coin2 ] / totalCoins[ coin1 ] ));
+    setVal2( fix( val1 * totalCoins[ coin2 ] / totalCoins[ coin1 ]));
     setCoin1( coin1 );
   }
   function handleCoin2Change( coin2 ) {
-    setVal1( fix( val2 * totalCoins[ coin1 ] / totalCoins[ coin2 ] ));
+    setVal1( fix( val2 * totalCoins[ coin1 ] / totalCoins[ coin2 ]));
     setCoin2( coin2 );
-  }
-
-  /* select the currency country */
-  const flag = ( fl ) => {
-    if( fl === 'EUR' ) {
-      return fl;
-    } else {
-      return fl;
-    }
   }
 
   return (
@@ -73,16 +58,16 @@ function App() {
         <div className='header_a'>Currency Converter</div>
         <div className='header_b'>
           1 EUR
-          <div className='header_b1'></div>
-          = { fix( ukr / totalCoins[ coin1 ])} UAH
-          <div className='header_b2'></div>
+          <div className='header_eu'></div>
+          = { fix( ukr / totalCoins.EUR )} UAH
+          <div className='header_uk'></div>
         </div>
 
         <div className='header_c'>
           1 USD
-          <div className='header_c1'></div>
-          = { fix( ukr / totalCoins[ coin2 ])} UAH
-          <div className='header_c2'></div>
+          <div className='header_us'></div>
+          = { fix( ukr / totalCoins.USD )} UAH
+          <div className='header_uk'></div>
         </div>
       </header>
 
@@ -93,7 +78,7 @@ function App() {
           val={ val1 } 
           coins={ coin1 }
           totalCoins={ Object.keys( totalCoins )}
-          flag={ flag( coin1 )}
+          flag={ coin1 }
         />
         <Currency
           onValChange={ handleVal2Change }
@@ -101,7 +86,7 @@ function App() {
           val={ val2 }
           coins={ coin2 }
           totalCoins={ Object.keys( totalCoins )}
-          flag={ flag( coin2 )}
+          flag={ coin2 }
         />
       </section>
     </div>

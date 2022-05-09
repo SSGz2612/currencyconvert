@@ -27,7 +27,6 @@
 }
 
 .countryfl {
-    background-image: url('');
     background-repeat: no-repeat;
     background-attachment: inherit;
     background-size: 20px;
@@ -47,3 +46,8 @@
     border-right: 1px solid #DDDDDD;
     border-bottom: 1px solid #DDDDDD;
 }
+
+.EUR { background-image: url('tools/european-union.png');}
+.UAH { background-image: url('tools/ukraine.png'); }
+.USD { background-image: url('tools/united-states.png');}
+.PYG { background-image: url('https://drive.google.com/uc?export=download&id=1Yb5LO2wg8mIjl-BgF1BVEYxyWVODcJr9');}

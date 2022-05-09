@@ -9,8 +9,7 @@ function Currency( props ) {
                 value={ props.val }
                 onChange={ e => props.onValChange( e.target.value )}
             />
-
-            <div className='country'><div className='countryfl'>{ props.flag }</div></div>
+            <div className='country'><div className={`countryfl ${ props.flag }`}></div></div>
 
             <select
                 className="select"
